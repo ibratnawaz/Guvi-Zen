@@ -14,7 +14,6 @@ body {
 }
 
 .header > .content-1{
-    height: 350px;
     background-color:  #565656;
     color: white;
     display: flex;
@@ -25,12 +24,13 @@ body {
 }
 
 .profile-image{
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    border: 3px solid  #ffc107;
+    border: 3px solid #ffc107;
     border-style: dotted;
-    padding: 2px;
+    position: relative;
+    top: 32px;
 }
 
 .above{
@@ -40,7 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -16%;
+    bottom: 16px;
 }
 
 .profile-strip{
