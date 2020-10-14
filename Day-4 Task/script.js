@@ -62,7 +62,7 @@ capsWord(str);
 // using anonymous function
 sumNum = (arr) => {
 
-    let res=arr.reduce((num ,sum)=> {return sum+num});
+    let res=arr.reduce((sum ,num)=> {return sum+num});
     console.log('sum of all the numbers in the array using anonymous function:', res);
 }
 
