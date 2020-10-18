@@ -1,0 +1,391 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.my-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col{
+    flex-direction: column;
+}
+
+.row{
+    flex-direction: row; 
+}
+
+.cus-div{
+    width: 58%;
+    height: 400px;
+    position: relative;
+}
+
+#skew1{
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+    background-color: #1F1527;
+    z-index: 10;
+}
+
+#skew2{
+    background-color: #F1E7DE;
+    z-index: 9;
+}
+
+#skew3{
+    background-color: #160F1C;
+    z-index: 8;
+}
+
+#skew4{
+    background-color: #D1A6AD;
+    z-index: 7;
+}
+
+#skew5{
+    background-color: #F1A2B4;
+    z-index: 6;
+}
+
+#skew6{
+    background-color: #B4B6BE;
+    z-index: 5;
+}
+
+#skew7{
+    background-color: #25192E;
+    z-index: 4;
+}
+
+#skew8{
+    background-color: #FAD2D7;
+    z-index: 3;
+}
+
+#skew9{
+    background-color: #FFE4CD;
+    z-index: 2;
+}
+
+#skew10{
+    background-color: #DADCDD;
+    z-index: 1;
+}
+
+.cus-div::after{
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background: inherit;
+    z-index: -1;
+    bottom: 0;
+    content: '';
+}
+
+#skew1::after,
+#skew2::after,
+#skew3::after,
+#skew4::after,
+#skew5::after,
+#skew6::after,
+#skew7::after,
+#skew8::after,
+#skew9::after {
+    transform-origin: top right;
+    transform: skewY(-5deg);
+}
+
+.content{
+    color: white;
+    height: 100%;
+}
+
+.alpha-light{
+    font-size: 8em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.alpha-pink{
+    color: #F1A2B4;
+    font-size: 8em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.alpha-dark{
+    color: #1F1527;
+    font-size: 8em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.text-light{
+    letter-spacing: 8px;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    top: -10px;
+}
+
+.text-pink{
+    color: #F1A2B4;
+    letter-spacing: 8px;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.text-dark{
+    color: #1F1527;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    top: -32px;
+    left: -40px;
+}
+
+.text-info{
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 8px;
+    font-size: 1.2em;
+    text-shadow: 0px 4px 1px rgb(238 232 232 / 29%);
+}
+
+.small{
+    color: #1F1527;
+    font-size: 0.7em;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+#skew2 .content,
+#skew4 .content,
+#skew6 .content,
+#skew7 .content,
+#skew8 .content{
+    align-items: flex-start;
+    padding-left: 150px;
+}
+
+#skew3 .content,
+#skew5 .content,
+#skew9 .content{
+    align-items: flex-start;
+    padding-left: 300px;
+}
+
+.para-title{
+    padding-left: 50px;
+    margin-top: 32px;
+    color: #1F1527;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.para-content-dark{
+    padding-left: 50px;
+    color: #1F1527;
+    width: 350px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.5;
+}
+
+.heading3{
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    bottom: 80px;
+    left: 65px;
+    letter-spacing: 2px;
+}
+
+.para-content-light{
+    position: relative;
+    bottom: 50px;
+    padding-left: 80px;
+    color: white;
+    width: 350px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.5;
+}
+
+.heading4{
+    color: #1F1527;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    bottom: 80px;
+    left: 75px;
+    letter-spacing: 2px;
+}
+
+.para4, .para6{
+    position: relative;
+    bottom: 50px;
+    left: 30px;
+}
+
+.para5{
+    bottom: 50px;
+    left: -10px;
+}
+
+.heading5{
+    color: white;
+    bottom: 85px;
+    left: 65px;
+}
+
+.heading7{
+    font-size: 1em;
+    font-weight: bolder;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    bottom: 90px;
+    left: 40px;
+    letter-spacing: 2px;
+}
+
+.small2{
+    font-size: 1em;
+    color: white;
+    position: relative;
+    top: 3px;
+}
+
+.para-title-7{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    color: #F1A2B4;
+    padding-left: 200px;
+}
+
+.para7{
+    width: 350px;
+    color: #F1A2B4;;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7em;
+    line-height: 1.5;
+    padding-left: 200px;
+}
+
+.div7{
+    position: relative;
+    top: -30px;
+    right: 50px;
+}
+
+.heading8{
+    bottom: 10px;
+    left: -10px;
+}
+
+.para8{
+    position: relative;
+    bottom: 0px;
+    left: 30px;
+}
+
+.info{
+    padding: 50px;
+}
+
+.divider{
+    width: 50px;
+}
+
+.md{
+    flex: 0.75;
+    margin-top: 50px;
+    color: rgb(92, 91, 91);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.address{
+    color: black;
+    font-size: 0.8em;
+    flex: 0.25;
+    align-items: flex-start;
+}
+
+.address #name{
+    font-size: 1.5em;
+    font-weight: bolder;
+    letter-spacing: 4px;
+}
+
+.address a{
+    text-decoration: none;
+    color: black;
+}
+
+.skew10 .my-flex{
+    align-items: flex-start;
+}
+
+footer{
+    justify-content: space-around !important;
+    height: 60px !important;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-transform: uppercase;
+    color: rgb(92, 91, 91);
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.border{
+    width: 52%;
+    height: 3624px;
+    position: absolute;
+    border: 2px dotted white;
+    z-index: 11;
+    top: 37px;
+    left: 24%;
+    border-bottom: none;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+}
+
+.hide{
+    width: 14px;
+    display: block;
+    position: absolute;
+    background:  #DADCDD;
+    top:3603px;
+    z-index: 32;
+    right: 23%;
+    height: 110px;
+}
+
+.logo{
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 1.5em;
+    width: 16%;
+    display: block;
+    position: absolute;
+    background: #1F1527;
+    color: white;
+    top: 20px;
+    left: 42%;
+    text-align: center;
+    z-index: 12;
+}
