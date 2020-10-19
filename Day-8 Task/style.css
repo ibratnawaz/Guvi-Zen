@@ -1,0 +1,51 @@
+.bg-color{
+    background-color: rgb(238, 234, 234);
+}
+
+.bg-gray{
+    background-color: rgb(230, 225, 225);
+}
+
+.head-part-1{
+    width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .my-box{
+        display: none;
+    }
+
+    .my-align{
+        text-align: center !important;
+    }
+
+    .rev{
+        flex-direction: column-reverse;
+    }
+}
+
+.my-space{
+    padding: 32px !important;
+}
+
+.img{
+    height: 100% !important;
+    margin-top: 8px !important;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 2px solid rgb(58, 56, 56);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-style: italic;
+    font-weight: bold;
+}
