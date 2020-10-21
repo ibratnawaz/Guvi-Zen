@@ -8,26 +8,26 @@ result.innerHTML = `
 let keys = document.createElement('div');
 keys.classList.add('keys');
 keys.innerHTML = `
-    <button class="bold" onclick="calculate('%')">%</button>
-    <button class="bold" onclick="clearFun('cls')">CE</button>
-    <button class="bold" onclick="clearFun('all')">C</button>
-    <button class="bold" onclick="calculate('BS')">&#9224;</button>
+    <button class="bold" onclick="calculate('%')" id="btn-4">%</button>
+    <button class="bold" onclick="clearFun('cls')" id="btn-8">CE</button>
+    <button class="bold" onclick="clearFun('all')" id="btn-7">C</button>
+    <button class="bold" onclick="calculate('BS')" id="btn-9">&#9224;</button>
     <button onclick='calculate(9)'>9</button>
     <button onclick='calculate(8)'>8</button>
     <button onclick='calculate(7)'>7</button>
-    <button class="bold" onclick="calculate('/')">&#xF7;</button>
+    <button class="bold" onclick="calculate('/')" id="btn-5">&#xF7;</button>
     <button onclick='calculate(6)'>6</button>
     <button onclick='calculate(5)'>5</button>
     <button onclick='calculate(4)'>4</button>
-    <button class="bold" onclick="calculate('*')">&#215;</button>
+    <button class="bold" onclick="calculate('*')" id="btn-6">&#215;</button>
     <button onclick='calculate(3)'>3</button>
     <button onclick='calculate(2)'>2</button>
     <button onclick='calculate(1)'>1</button>
-    <button class="bold" onclick="calculate('-')">-</button>
+    <button class="bold" onclick="calculate('-')" id="btn-2">-</button>
     <button onclick='calculate(0)'>0</button>
-    <button class="bold" onclick="calculate('.')">.</button>
-    <button class="equal" onclick="calculate('=')">=</button>
-    <button class="bold" onclick="calculate('+')">+</button>
+    <button class="bold" onclick="calculate('.')" id="btn-1">.</button>
+    <button class="equal" onclick="calculate('=')" id="btn-10">=</button>
+    <button class="bold" onclick="calculate('+')" id="btn-3">+</button>
 `;
 row.append(result, keys);
 

@@ -7,13 +7,56 @@
 }
 
 @media screen and (min-width: 451px) {
+    body{
+        align-items: center;
+    }
+
     .row {
         width: 400px;
         height: 400px;
     }
 
-    body{
-        align-items: center;
+    button{
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    button{
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    #btn-1{
+        order: 1;
+    }
+    #btn-2{
+        order: 2;
+    }
+    #btn-3{
+        order: 3;
+    }
+    #btn-4{
+        order: 4;
+    }
+    #btn-5{
+        order: 5;
+    }
+    #btn-6{
+        order: 6;
+    }
+    #btn-7{
+        order: 7;
+    }
+    #btn-8{
+        order: 8;
+    }
+    #btn-9{
+        order: 9;
+    }
+    #btn-10{
+        order: 10;
     }
 }
 
@@ -75,7 +118,6 @@ button {
     height: 40px;
     border: 4px;
     border-radius: 6px;
-    margin: 8px;
     font-size: 0.9em;
     text-align: center;
 }
