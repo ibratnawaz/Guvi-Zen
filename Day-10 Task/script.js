@@ -63,13 +63,17 @@ clearFun = (event) => {
     }
 }
 
-document.body.onkeypress = (keyPress) => {
+window.onkeydown = (keyPress) => {
 
     if (keyPress.keyCode == 13){
         calculate('=');
     }
 
-    if ((keyPress.key >= 0 && keyPress.key <= 9) ||
+    else if(keyPress.keyCode == 8){
+        calculate('BS');
+    }
+
+    else if ((keyPress.key >= 0 && keyPress.key <= 9) ||
         keyPress.key <= '%' || keyPress.key <= '/' ||
         keyPress.key <= '*' || keyPress.key <= '-' ||
         keyPress.key <= '+') {
