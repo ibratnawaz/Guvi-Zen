@@ -33,82 +33,83 @@
     </div>
 
     <div class="container flex-col">
-        
-        <div class="flex-row field-container">
-            <label for="name" class="sec-1 flex-row">Full Name</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="Full Name" id="name">
-                <i class="fa fa-user"></i>
+        <form action="" onsubmit="alert('Thank you for providing your details!!')">
+            <div class="flex-row field-container">
+                <label for="name" class="sec-1 flex-row">Full Name</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="Full Name" id="name" required>
+                    <i class="fa fa-user"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="addr-1" class="sec-1 flex-row">Address Line-1</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="Address Line-1" id="addr-1">
-                <i class="fa fa-address-card icon"></i>
+            <div class="flex-row field-container">
+                <label for="addr-1" class="sec-1 flex-row">Address Line-1</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="Address Line-1" id="addr-1" required>
+                    <i class="fa fa-address-card icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="addr-2" class="sec-1 flex-row">Address Line-2</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="Address Line-2" id="addr-2">
-                <i class="fa fa-address-card icon"></i>
+            <div class="flex-row field-container">
+                <label for="addr-2" class="sec-1 flex-row">Address Line-2</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="Address Line-2" id="addr-2" required>
+                    <i class="fa fa-address-card icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="city" class="sec-1 flex-row">City</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="City" id="city">
-                <i class="fa fa-building"></i>
+            <div class="flex-row field-container">
+                <label for="city" class="sec-1 flex-row">City</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="City" id="city" required>
+                    <i class="fa fa-building"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="state" class="sec-1 flex-row">State/Province/Region</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="State/Province/Region" id="state">
-                <i class="fa fa-map-marker" style="padding: 9px 14px;"></i>
+            <div class="flex-row field-container">
+                <label for="state" class="sec-1 flex-row">State/Province/Region</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="State/Province/Region" id="state" required>
+                    <i class="fa fa-map-marker" style="padding: 9px 14px;"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="zip" class="sec-1 flex-row">Postal Code/Zip</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="Postal Code/Zip" id="zip">
-                <i class="fa fa-envelope-open icon"></i>
+            <div class="flex-row field-container">
+                <label for="zip" class="sec-1 flex-row">Postal Code/Zip</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="number" placeholder="Postal Code/Zip" id="zip" min="100000" max="999999" required>
+                    <i class="fa fa-envelope-open icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="country" class="sec-1 flex-row">Country</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="text" placeholder="Country" id="country">
-                <i class="fa fa-flag icon"></i>
+            <div class="flex-row field-container">
+                <label for="country" class="sec-1 flex-row">Country</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="text" placeholder="Country" id="country" required>
+                    <i class="fa fa-flag icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="email" class="sec-1 flex-row">Email</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="email" placeholder="Email" id="email">
-                <i class="fa fa-envelope icon"></i>
+            <div class="flex-row field-container">
+                <label for="email" class="sec-1 flex-row">Email</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="email" placeholder="Email" id="email" required>
+                    <i class="fa fa-envelope icon"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row field-container">
-            <label for="phone" class="sec-1 flex-row">Phone Number</label>
-            <div class="sec-2 inputWithIcon inputIconBox">
-                <input type="number" placeholder="Phone Number" id="phone">
-                <i class="fa fa-phone"></i>
+            <div class="flex-row field-container">
+                <label for="phone" class="sec-1 flex-row">Phone Number</label>
+                <div class="sec-2 inputWithIcon inputIconBox">
+                    <input type="number" placeholder="Phone Number" id="phone" min="1000000000" max="9999999999" required>
+                    <i class="fa fa-phone"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="flex-row center">
-            <button type="submit">Submit</button>
-        </div>
+            <div class="flex-row center">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
     <script src="assets/js/script.js"></script>
