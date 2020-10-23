@@ -6,7 +6,7 @@
     <title>Assessment 23/10/2020 | Landing Page</title>
 
     <!-- My Style -->
-    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="assets/css/page.css">
 
 </head>
 <body class="flex-col center">
@@ -18,7 +18,7 @@
                 <a href="index.html" class="item item-1">Form Demo</a>
                 <a href="page.html" class="item item-2 active">Landing Page</a>
                 <a href="grid.html" class="item item-3">Grid System</a>
-                <a onclick="toggle()" id="toggle" class="item item-3"><img src="menu.png" alt="menu icon" width="30px"></a>
+                <a onclick="toggle()" id="toggle" class="item item-3"><img src="assets/images/menu.png" alt="menu icon" width="30px"></a>
             </div>
         </div>
 
@@ -101,22 +101,7 @@
         </ul>
     </div>
 
-    <script>
-
-        let menu=true;
-        toggle=()=>{
-            let btn = document.getElementById('toggle');
-            let modal=document.getElementById('modal');
-            if(menu){
-                menu=false;
-                modal.style.display='block';
-            }
-            else{
-                menu=true;
-                modal.style.display='none';
-            }
-        }
-
-    </script>
+    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>

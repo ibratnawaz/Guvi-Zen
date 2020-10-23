@@ -87,3 +87,9 @@ input:focus {
     color: #fff;
     background-color: dodgerBlue;
 }
+
+button{
+    width: 80px;
+    font-size: 1em;
+    margin-top: 8px;
+}
