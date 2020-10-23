@@ -1,0 +1,202 @@
+@media screen and (max-width: 650px) {
+
+    .heading{
+        margin-top: 20px;
+        flex: 1 !important;
+    }
+
+    .menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .menu:hover{
+        box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    }
+
+    .heading{
+        margin-bottom: 16px;
+    }
+
+    .container{
+        width: 100% !important;
+    }
+
+    #toggle{
+        display: flex !important;
+    }
+
+    .item{
+        display: none;
+    }
+
+    .modal{
+        display: none;
+    }
+
+    .text-body{
+        flex-direction: column !important;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .modal{
+        display: none !important;
+    }
+}
+
+.modal{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 2px;
+    color: black !important;
+    transition: 0.5s ease;
+}
+
+.modal li{
+    margin: 16px;
+    list-style-type: square;
+}
+
+.modal li:hover{
+    padding: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.modal a{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: rgb(65, 65, 66);
+    margin: 8px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 60%;
+}
+
+.header{
+    border-bottom: 1px solid black;
+    padding: 16px 0 16px 0;
+    flex-wrap: wrap-reverse;
+}
+
+.heading{
+    flex: 0.5;
+    font-size: 2em;
+    align-items: center;
+}
+
+.menu{
+    flex: 0.5;
+    align-items: center;
+}
+
+.item{
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    color: #2B7DE9;
+}
+
+.active{
+    background-color: #2B7DE9;
+    color: white !important;
+}
+
+.item-1{
+    margin-right: 16px;
+}
+
+.item-2{
+    margin: 0 16px 0 16px;
+}
+
+.item-3{
+    margin: 0 16px 0 16px;
+}
+
+#toggle{
+    display: none;
+}
+
+.banner{
+    padding: 32px 16px 48px 16px;
+    background-color: rgb(241, 240, 245);
+    margin-top: 16px;
+}
+
+.title{
+    font-size: 5em;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.banner p{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.btn{
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 4px;
+    outline: none;
+    margin: 8px;
+    color: white;
+    font-size: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-success{
+    background-color: #218838;
+    border: #218838;
+}
+
+.btn-primary{
+    background-color: #0069D9;
+    border: #0069D9;
+}
+
+.text-body{
+    margin-top: 32px;
+}
+
+.sec-1{
+    flex: 0.5; 
+    padding: 16px;
+
+}
+
+.sec-2{
+    flex: 0.5;
+    padding: 16px;
+
+}
+
+.text-heading{
+    font-size: 2em;
+}
+
+#mail{
+    font-style: italic;
+    color: #2B7DE9;
+}

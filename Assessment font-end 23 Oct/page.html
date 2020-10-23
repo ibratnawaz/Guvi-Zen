@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment 23/10/2020 | Landing Page</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="page.css">
+
+</head>
+<body class="flex-col center">
+    
+    <div class="container">
+        <div class="header flex-row">
+            <div class="heading flex-row">Starter template lacodeid</div>
+            <div class="menu flex-row">
+                <a href="index.html" class="item item-1">Form Demo</a>
+                <a href="page.html" class="item item-2 active">Landing Page</a>
+                <a href="grid.html" class="item item-3">Grid System</a>
+                <a onclick="toggle()" id="toggle" class="item item-3"><img src="menu.png" alt="menu icon" width="30px"></a>
+            </div>
+        </div>
+
+        <div class="banner flex-col center">
+            <div class="title">Jumbotron Heading</div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum veniam corporis, aliquid minima
+                unde nostrum consequatur, quod doloremque? Earum inventore tempore assumenda illum aut facilis odio incidunt.
+            </p>
+            <button class="btn btn-success">Sign up today</button>
+            <button class="btn btn-primary">Launch demo modal</button>
+        </div>
+        <div class="text-body flex-row">
+            <div class="sec-1 flex-col">
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+            </div>
+            <div class="sec-2 flex-col">
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+
+                <div class="box flex-col">
+                    <div class="text-heading">Subheading</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint officia, et cum 
+                        veniam corporis, aliquid minima under.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+        <hr>
+        <span>Starter <span id="mail">some@mail.com</span> 2017</span>
+
+    </div>
+
+
+
+
+    <div class="modal" id="modal">
+        <ul>
+            <li><a href="index.html" class="">Form Demo</a></li>
+            <li><a href="page.html" class="">Landing Page</a></li>
+            <li><a href="grid.html" class="">Grid System</a></li>
+        </ul>
+    </div>
+
+    <script>
+
+        let menu=true;
+        toggle=()=>{
+            let btn = document.getElementById('toggle');
+            let modal=document.getElementById('modal');
+            if(menu){
+                menu=false;
+                modal.style.display='block';
+            }
+            else{
+                menu=true;
+                modal.style.display='none';
+            }
+        }
+
+    </script>
+</body>
+</html>
