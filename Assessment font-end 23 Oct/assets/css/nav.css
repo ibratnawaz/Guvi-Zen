@@ -10,7 +10,7 @@
         top: 0;
         right: 0;
         border-radius: 50%;
-        z-index: 1;
+        z-index: 2;
     }
 
     .menu:hover{
@@ -44,9 +44,10 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     position: fixed;
-    top: 2px;
+    top: 0px;
     color: black !important;
     transition: 0.5s ease;
+    z-index: 1;
 }
 
 .modal li{

@@ -52,7 +52,7 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     position: fixed;
-    top: 2px;
+    top: 0px;
     color: black !important;
     transition: 0.5s ease;
 }
