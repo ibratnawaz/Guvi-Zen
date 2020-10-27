@@ -738,10 +738,366 @@ for (let i = 0; i < strExtraSpace.length; i++) {
     if (ch != ' ') {
         temp += ch;
     } else {
-        if(temp!=''){
+        if (temp != '') {
             newStr += temp + ' ';
             temp = '';
-        }     
+        }
     }
 }
 console.log(newStr.trim());
+
+// Matrix
+
+// Write a program to add two matrices Matrix A + Matrix B
+let row = 3,
+    col = 3;
+let matrix1 = [
+    [1, 2, 0],
+    [0, 1, 1],
+    [2, 0, 1]
+];
+let matrix2 = [
+    [1, 1, 2],
+    [2, 1, 1],
+    [1, 2, 1]
+];
+let addMatrix = [
+    [],
+    [],
+    []
+];
+for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+        addMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+    }
+}
+console.log(addMatrix);
+
+// Write a program to subtract two matrices. Matrix A - Matrix B
+let subMatrix = [
+    [],
+    [],
+    []
+];
+for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+        subMatrix[i][j] = matrix1[i][j] - matrix2[i][j];
+    }
+}
+console.log(subMatrix);
+
+// Write a program to perform Scalar matrix multiplication. constant value * Matrix A
+let scalarVal = 5;
+let scalarMatrix = [
+    [],
+    [],
+    []
+];
+for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+        scalarMatrix[i][j] = matrix1[i][j] * scalarVal;
+    }
+}
+console.log(scalarMatrix);
+
+// Write a program to multiply two matrices.
+// let Matrix A is (R x c) and Matrix B is (M x N)
+// then for multiply two matrices C==M and new matrix is (R x N)
+matrix1 = [ // 2 x 3
+    [2, -3, 4],
+    [53, 3, 5]
+];
+matrix2 = [ // 3 x 2
+    [3, 3],
+    [5, 0],
+    [-3, 4]
+];
+let productMatrix = [ // 2 x 2
+    [],
+    []
+];
+for (let i = 0; i < 2; i++) {
+    for (let j = 0; j < 2; j++) {
+        let sum = 0;
+        for (let k = 0; k < 3; k++) {
+            sum += matrix1[i][k] * matrix2[k][j];
+        }
+        productMatrix[i][j] = sum;
+    }
+}
+console.log(productMatrix);
+
+// Write a program to check whether two matrices are equal or not.
+matrix1 = [
+    [23, 56],
+    [45, 80]
+];
+matrix2 = [
+    [23, 56],
+    [45, 80]
+];
+console.log(`Equal:${checkMatrixEqual(matrix1, matrix2)}`);
+
+function checkMatrixEqual(m1, m2) {
+    if (m1.length != m2.length) {
+        return false;
+    } else {
+        let col = m2[0].length;
+        for (let i = 0; i < m1.length; i++) {
+
+            if (m1[i].length != col || m2[i].length != col) {
+                return false;
+            }
+        }
+        for (let i = 0; i < m1.length; i++) {
+            for (let j = 0; j < m1.length; j++) {
+
+                if (m1[i][j] != m2[i][j]) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+// Write a program to find sum of main diagonal elements of a matrix.
+// r==c
+matrix2 = [
+    [10, 20, 35],
+    [40, 50, 60],
+    [35, 80, 90]
+];
+let sum = 0;
+if (checkSqMatrix(matrix2)) {
+    for (let i = 0; i < matrix2.length; i++) {
+        for (let j = 0; j < matrix2[i].length; j++) {
+            if (i == j) {
+                sum += matrix2[i][j];
+            }
+        }
+    }
+    console.log(`sum of main diagonal elements of a matrix is : ${sum}`);
+} else {
+    console.log('Not a square matrix');
+}
+
+function checkSqMatrix(m1) {
+    for (let i = 0; i < m1.length; i++) {
+        let col = m1.length;
+        if (m1[i].length != col) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Write a program to find sum of minor diagonal elements of a matrix.
+sum = 0;
+if (checkSqMatrix(matrix2)) {
+    let j = matrix2[0].length - 1;
+    for (let i = 0; i < matrix2.length; i++, j--) {
+        sum += matrix2[i][j];
+    }
+    console.log(`sum of minor diagonal elements of a matrix is : ${sum}`);
+} else {
+    console.log('Not a square matrix');
+}
+
+// Write a program to find sum of each row and column of a matrix.
+matrix2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [3, 2, 5]
+];
+let sumRowArr = [],
+    sumColArr = [];
+for (let i = 0; i < matrix2.length; i++) {
+    let sumRow = 0,
+        sumCol = 0;
+    for (let j = 0; j < matrix2.length; j++) {
+        sumRow += matrix2[i][j];
+        sumCol += matrix2[j][i];
+    }
+    sumRowArr.push(sumRow);
+    sumColArr.push(sumCol);
+}
+console.log({
+    sumRowArr,
+    sumColArr
+});
+
+// Write a program to interchange diagonals of a matrix.
+matrix2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [3, 2, 5]
+];
+if (checkSqMatrix(matrix2)) {
+
+    let j = matrix2[0].length - 1;
+    let k = 0;
+    for (let i = 0; i < matrix2.length; i++, k++, j--) {
+
+        let temp = matrix2[i][k];
+        matrix2[i][k] = matrix2[i][j]
+        matrix2[i][j] = temp;
+    }
+    console.log(matrix2);
+
+} else {
+    console.log('Not a square matrix');
+}
+
+// Write a program to find upper triangular matrix and its sum.
+matrix2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [3, 2, 5]
+];
+if (checkSqMatrix(matrix2)) {
+    let upperTri = '';
+    let sum = 0;
+    for (let i = 0; i < matrix2.length; i++) {
+
+        for (let j = 0; j <= i; j++) {
+            upperTri += matrix2[i][j] + ' ';
+            sum += matrix2[i][j];
+        }
+        upperTri += '\n';
+    }
+    console.log(upperTri.trim());
+    console.log(`Upper triangular matrix sum=${sum}`);
+
+} else {
+    console.log('Not a square matrix');
+}
+
+// Write a program to find lower triangular matrix and its sum.
+if (checkSqMatrix(matrix2)) {
+    let lowerTri = '';
+    let sum = 0;
+    for (let i = 0; i < matrix2.length; i++) {
+
+        for (let j = i + 1; j < matrix2.length; j++) {
+            lowerTri += matrix2[i][j] + ' ';
+            sum += matrix2[i][j];
+        }
+        lowerTri += '\n';
+    }
+    console.log(lowerTri.trim());
+    console.log(`Lower triangular matrix sum=${sum}`);
+
+} else {
+    console.log('Not a square matrix');
+}
+
+// Write a program to find sum of upper triangular matrix.
+// line 952 same logic
+
+// Write a program to find sum of lower triangular matrix.
+// line 976 same logic
+
+// Write a program to find transpose of a matrix.
+matrix2 = [
+    [1, 2],
+    [4, 5],
+    [3, 2]
+];
+
+let transMatrix = '';
+for (let i = 0; i < matrix2[0].length; i++) {
+
+    for (let j = matrix2.length - 1; j >= 0; j--) {
+
+        transMatrix += matrix2[j][i] + ' ';
+    }
+    transMatrix += '\n';
+}
+console.log(transMatrix);
+
+// Write a program to find determinant of a matrix.
+// !!! don't know how to solve it. Need help !!!
+
+// Write a program to check Identity matrix.
+matrix2 = [
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1]
+];
+
+if (checkSqMatrix(matrix2)) {
+    let isId = true;
+    for (let i = 0; i < matrix2.length; i++) {
+
+        for (let j = 0; j < matrix2.length; j++) {
+            if ((i == j && matrix2[i][j] != 1) || (i != j && matrix2[i][j] != 0)) {
+                isId = false;
+                break;
+            }
+        }
+    }
+    console.log(`Identity matrix:${isId}`);
+
+} else {
+    console.log('Not a square matrix');
+}
+
+// Write a program to check Sparse matrix.
+matrix2 = [
+    [1, 0],
+    [0, 1],
+    [0, 0]
+];
+
+let zeroCount = 0,
+    numCount = 0;
+for (let i = 0; i < matrix2.length; i++) {
+
+    for (let j = 0; j < matrix2[0].length; j++) {
+        if (matrix2[i][j] == 0) {
+            zeroCount++;
+        } else {
+            numCount++;
+        }
+    }
+}
+if (zeroCount >= numCount) {
+    console.log(`Sparse matrix:${true}`);
+} else {
+    console.log(`Sparse matrix:${false}`);
+}
+
+// Write a program to check Symmetric matrix.
+// sq matrix && original matrix == transpose matrix
+matrix2 = [
+    [1, 2, 3],
+    [2, 4, 5],
+    [3, 5, 8]
+];
+if (checkSqMatrix(matrix2)) {
+    let transMatrix = '';
+    let original='';
+    for (let i = 0; i < matrix2.length; i++) {
+
+        for (let j = 0; j < matrix2.length; j++) {
+
+            transMatrix += matrix2[j][i] + ' ';
+            original += matrix2[i][j]+' ';
+        }
+        transMatrix += '\n';
+        original += '\n';
+    }
+    if (transMatrix==original) {
+        console.log(`Symmetric matrix:true`);
+    } else {
+        console.log(`Symmetric matrix:false`);
+    }
+
+} else {
+    console.log('Not a square matrix');
+}
+
+// Array
+
+// Write a program to read and print elements of array. — using recursion.
