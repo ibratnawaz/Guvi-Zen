@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center">
+    <form action="#" onsubmit="getResult()">
+        <input type="search" placeholder="Try searching a recipe.." id="search" required>
+        <button type="submit" id="btn-lg">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+        <button type="submit" id="btn-sm"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+
+    <div class="result" id="result">
+        <h1 id="slogan">Try searching your favorite recipe now</h1>
+    </div>
+
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <button class="close" onclick="toggleModal()">X</button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <object data="images/load.gif" id="loading"></object>
+    <h1 id="error">Oops! nothing found. Try again.</h1>
+
+    <script src="script.js"></script>
+    <script src="https://use.fontawesome.com/28496ef631.js"></script>
+
+</body>
+
+</html>

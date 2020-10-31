@@ -1,0 +1,245 @@
+@media screen and (max-width:880px) {
+    form {
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width:629px) {
+    form {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width:440px) {
+    #btn-sm {
+        display: none;
+    }
+}
+
+@media screen and (max-width:439px) {
+    #btn-sm {
+        display: line;
+    }
+
+    #btn-lg {
+        display: none;
+    }
+
+    .result {
+        justify-content: center;
+    }
+
+    .card {
+        width: 70% !important;
+        margin: 0 0 32px 0 !important;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-image: url(images/bg-img-2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 32px;
+}
+
+input {
+    width: 70%;
+    border: 1px solid #DDDDDD;
+}
+
+button[type=submit] {
+    width: 20%;
+    background-color: #007BFF;
+    border: 1px solid #007BFF;
+    color: white;
+    font-size: 1em;
+}
+
+input,
+button[type=submit] {
+    height: 32px;
+    transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 8px 3px 8px;
+    margin: 5px 10px 3px 10px;
+    border-radius: 16px;
+}
+
+input:focus {
+    box-shadow: 0 0 5px 1px rgba(81, 203, 238, 1);
+    transform: scale(1.05);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.result {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#loading {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+}
+
+#error {
+    color: white;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    margin: 0 32px 32px 0;
+    background: white;
+}
+
+.card-header {
+    height: 200px;
+    background: lightgray;
+    background-position: center;
+    background-size: cover;
+}
+
+.d-name {
+    margin: 8px;
+    padding: 8px;
+    font-size: 1.3em;
+    color: rgb(114, 112, 112);
+}
+
+.card-body {
+    flex: 1 0 auto;
+}
+
+.cal {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.list {
+    font-size: 0.9em;
+    padding: 4px;
+    color: rgb(114, 112, 112);
+    transition: all 0.30s ease-in-out;
+}
+
+.list:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.card-footer {
+    margin: 8px;
+    border-top: 1px solid #aaa;
+}
+
+.card-footer a {
+    margin: 4px;
+    padding: 4px;
+    background-color: white;
+    color: green;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.card-footer a:hover {
+    border: 1px solid black;
+    color: black;
+    transform: scale(1.05);
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modal {
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 6px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+}
+
+.modal-body ul {
+    list-style-type: square;
+    color: white;
+}
+
+.modal-body ul li {
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 4px;
+}
+
+.modal .close {
+    position: absolute;
+    color: #aaaaaa;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: white;
+}
+
+#slogan {
+    color: white;
+    margin-top: 20%;
+}
