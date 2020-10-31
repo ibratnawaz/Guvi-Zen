@@ -1077,18 +1077,18 @@ matrix2 = [
 ];
 if (checkSqMatrix(matrix2)) {
     let transMatrix = '';
-    let original='';
+    let original = '';
     for (let i = 0; i < matrix2.length; i++) {
 
         for (let j = 0; j < matrix2.length; j++) {
 
             transMatrix += matrix2[j][i] + ' ';
-            original += matrix2[i][j]+' ';
+            original += matrix2[i][j] + ' ';
         }
         transMatrix += '\n';
         original += '\n';
     }
-    if (transMatrix==original) {
+    if (transMatrix == original) {
         console.log(`Symmetric matrix:true`);
     } else {
         console.log(`Symmetric matrix:false`);
@@ -1101,3 +1101,32 @@ if (checkSqMatrix(matrix2)) {
 // Array
 
 // Write a program to read and print elements of array. — using recursion.
+let recArr = [];
+
+function readData(n) {
+    if (n == 0) {
+        return;
+    } else {
+        // let num=prompt('Enter number');         // reading data from user.
+        let num = n;
+        recArr.push(+num);
+        readData(--n);
+    }
+}
+readData(5);
+console.log(recArr);
+
+// Write a program to print all negative elements in an array.
+let numArr = [45, 89, 1, -74, 5, -96, 12, -78, -26, -12];
+console.log(numArr);
+
+function getNegNum(n) {
+    if (n >= 0) {
+        if (numArr[n] < 0) {
+            console.log(numArr[n]);
+        }
+        getNegNum(--n);
+    }
+    return;
+}
+getNegNum(numArr.length - 1);
