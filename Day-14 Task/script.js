@@ -1,6 +1,6 @@
 let div = document.getElementById('div');
 
-function createTimer() {
+setTimeout(function () {
     setTimeout(function () {
         setTimeout(function () {
             setTimeout(function () {
@@ -46,10 +46,7 @@ function createTimer() {
         }, 1000);
         div.innerHTML = 9;
         document.body.style.background = 'linear-gradient(to right, rgb(131, 96, 195), rgb(46, 191, 145))';
-    }, 1500);
+    }, 1000);
     div.innerHTML = 10;
     document.body.style.background = 'linear-gradient(to right top, #e0b519, #fd8351, #e76686, #a866a4, #5c679d)';
-
-}
-
-createTimer();
+}, 0)
