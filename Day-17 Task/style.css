@@ -1,0 +1,64 @@
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column !important;
+    }
+
+    .card {
+        max-width: none !important;
+    }
+}
+
+body {
+    background-color: #1B333C;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-image: linear-gradient(to right top, #d3c39e, #a5aa8b, #7e8f7b, #5f746a, #485856);
+    border: black;
+    width: 18rem;
+}
+
+.my-box {
+    display: flex;
+    justify-content: center;
+}
+
+.card-header {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    border: none;
+    background-color: black;
+}
+
+.card-img-top {
+    width: 90%;
+    height: 10rem;
+    border: none !important;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-primary {
+    border: 1px solid white;
+    color: black;
+    background: inherit;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1rem rgba(241, 242, 243, 0.986) !important;
+}
+
+.temp {
+    display: none;
+}
