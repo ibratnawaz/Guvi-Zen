@@ -1,13 +1,3 @@
-@media screen and (max-width: 800px) {
-    .container {
-        flex-direction: column !important;
-    }
-
-    .card {
-        max-width: none !important;
-    }
-}
-
 body {
     background-color: #1B333C;
 }

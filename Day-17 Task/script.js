@@ -34,6 +34,12 @@ async function getCountry() {
                 getWeather(obj.latlng[0], obj.latlng[1]).then(res => {
                     temp.innerHTML = `Temp: ${res}°C`;
                 })
+
+                // const FULL_URL = `${URL}?lat=${obj.latlng[0]}&lon=${obj.latlng[1]}&appid=${API_KEY}&units=metric`;
+                // let resWeather = await fetch(FULL_URL);
+                // let dataWeather = await resWeather.json();
+                // temp.innerHTML = `Temp: ${dataWeather.main.temp}°C`;
+
                 info.append(capital, region, code, latLng, btn, temp);
                 card.append(head, flag, info);
                 col.appendChild(card);
