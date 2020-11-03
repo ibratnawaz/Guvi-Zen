@@ -8,7 +8,7 @@ async function getCountry() {
     try {
         let resCountry = await fetch('https://restcountries.eu/rest/v2/all');
         let data = await resCountry.json();
-        data.forEach((obj, i) => {
+        data.forEach(async (obj, i) => {
             if (obj.latlng[0] && obj.latlng[1]) {
                 let col = createMyTag('div', 'col-lg-4 col-md-6 col-sm-12 col-12 mt-5 my-box');
                 let card = createMyTag('div', 'card center');
@@ -31,14 +31,14 @@ async function getCountry() {
                 btn.innerHTML = 'Click for Weather';
                 let temp = createMyTag('h6', 'card-title temp');
                 temp.setAttribute('id', `temp-${i}`);
-                getWeather(obj.latlng[0], obj.latlng[1]).then(res => {
-                    temp.innerHTML = `Temp: ${res}°C`;
-                })
+                // getWeather(obj.latlng[0], obj.latlng[1]).then(res => {
+                //     temp.innerHTML = `Temp: ${res}°C`;
+                // })
 
-                // const FULL_URL = `${URL}?lat=${obj.latlng[0]}&lon=${obj.latlng[1]}&appid=${API_KEY}&units=metric`;
-                // let resWeather = await fetch(FULL_URL);
-                // let dataWeather = await resWeather.json();
-                // temp.innerHTML = `Temp: ${dataWeather.main.temp}°C`;
+                const FULL_URL = `${URL}?lat=${obj.latlng[0]}&lon=${obj.latlng[1]}&appid=${API_KEY}&units=metric`;
+                let resWeather = await fetch(FULL_URL);
+                let dataWeather = await resWeather.json();
+                temp.innerHTML = `Temp: ${dataWeather.main.temp}°C`;
 
                 info.append(capital, region, code, latLng, btn, temp);
                 card.append(head, flag, info);
@@ -66,16 +66,16 @@ function showWeather(index, btnId) {
     temp.style.display = 'flex';
 }
 
-async function getWeather(lat, lng) {
-    try {
-        const FULL_URL = `${URL}?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
-        let resWeather = await fetch(FULL_URL);
-        let data = await resWeather.json();
-        return data.main.temp;
-    } catch (error) {
-        console.error(error);
-    }
+// async function getWeather(lat, lng) {
+//     try {
+//         const FULL_URL = `${URL}?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`;
+//         let resWeather = await fetch(FULL_URL);
+//         let data = await resWeather.json();
+//         return data.main.temp;
+//     } catch (error) {
+//         console.error(error);
+//     }
 
-}
+// }
 
 getCountry();
