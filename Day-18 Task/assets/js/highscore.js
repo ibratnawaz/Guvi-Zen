@@ -17,7 +17,7 @@ score.innerText = `${localStorage.getItem('highScoreUser')} - ${localStorage.get
 
 
 
-let homeBtn = createMyTag('a', 'btn btn-primary btn-lg mt-5', 'home');
+let homeBtn = createMyTag('a', 'btn btn-primary btn-lg mt-5', 'goHome');
 homeBtn.setAttribute('href', '../index.html');
 homeBtn.innerText = "Go Home";
 
