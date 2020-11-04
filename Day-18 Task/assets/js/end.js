@@ -51,7 +51,7 @@ let playBtn = createMyTag('a', 'btn btn-primary mb-3', 'playAgain');
 playBtn.href = "game.html";
 playBtn.innerText = "Play Again";
 
-let homeBtn = createMyTag('a', 'btn btn-primary mb-3', 'playAgain');
+let homeBtn = createMyTag('a', 'btn btn-primary mb-3', 'goHome');
 homeBtn.href = "../index.html";
 homeBtn.innerText = "Go Home";
 
