@@ -23,5 +23,6 @@ let highScoreBtn = createMyTag('a', 'btn btn-primary btn-lg btn-block highScores
 highScoreBtn.setAttribute('href', 'game.html');
 highScoreBtn.setAttribute('role', 'button');
 highScoreBtn.innerText = "High Scores";
+highScoreBtn.href = "pages/highscores.html";
 
 info.append(mainHeading, playBtn, highScoreBtn);

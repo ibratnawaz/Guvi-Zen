@@ -18,12 +18,17 @@ function getInput(ele) {
 
 function saveScore() {
 
-    let data = {
-        'username': document.getElementById('username').value,
-        'score': score[1]
+    if (localStorage.getItem('highScore') < score[1]) {
+        localStorage.setItem('highScore', score[1]);
+        localStorage.setItem('highScoreUser', document.getElementById('username').value);
+    } else {
+        localStorage.setItem('highScore', score[1]);
+        localStorage.setItem('highScoreUser', document.getElementById('username').value);
     }
-
-    localStorage.setItem('scoreData', data);
+    localStorage.setItem(`${document.getElementById('username').value}`, score[1]);
+    alert('Your result has been saved');
+    document.getElementById('username').disabled = true;
+    document.getElementById('saveScoreBtn').disabled = true;
 }
 
 let container = createMyTag('div', 'container');
