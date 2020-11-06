@@ -43,7 +43,6 @@ class PetRequest {
     }
 
     petRequestStatus(petObj) {
-        let checkAvail = new PetAvailable();
         let len = 5;
         if (this.request.length < len) {
             len = this.request.length;

@@ -29,7 +29,6 @@ var PetRequest = /** @class */ (function () {
     };
     PetRequest.prototype.petRequestStatus = function (petObj) {
         var _this = this;
-        var checkAvail = new PetAvailable();
         var len = 5;
         if (this.request.length < len) {
             len = this.request.length;
