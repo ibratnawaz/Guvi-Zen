@@ -15,7 +15,7 @@ var chunk = function (arr, n) {
     }
     return chArr;
 };
-console.log(chunk(['a', 'b', 'c', 'd'], 2));
+console.log(chunk(['a', 'b', 'c', 'd', 8, 6, 1, 5], 5));
 console.log(chunk(['a', 'b', 'c', 'd'], 3));
 // Sum
 var sum = function () {
