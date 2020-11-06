@@ -21,31 +21,30 @@ var PetRequest = /** @class */ (function () {
     function PetRequest() {
         this.request = [];
     }
-    PetRequest.prototype.createRequest = function (petInfo) {
+    PetRequest.prototype.createPetRequest = function (petInfo) {
         this.request.push(petInfo);
     };
-    PetRequest.prototype.getRequest = function () {
+    PetRequest.prototype.getPetRequest = function () {
         return this.request;
     };
-    PetRequest.prototype.requestStatus = function () {
+    PetRequest.prototype.petRequestStatus = function (petObj) {
         var _this = this;
         var checkAvail = new PetAvailable();
-        var petObj = checkAvail.petsDetail();
         var len = 5;
         if (this.request.length < len) {
             len = this.request.length;
         }
+        var petsData = petObj.petsDetail();
         var _loop_1 = function (i) {
-            petObj.forEach(function (ele) {
-                console.log(ele.petType.toLowerCase(), _this.request[i].petType.toLowerCase());
+            petsData.forEach(function (ele) {
                 if (ele.petType.toLowerCase() == _this.request[i].petType.toLowerCase()) {
                     if (ele.quantity > _this.request[i].quantity) {
-                        console.log("Request of " + ele.petType + " of quantity " + _this.request[i].quantity + " is fulfilled");
+                        console.log("Request for " + _this.request[i].quantity + " " + ele.petType + " is fulfilled");
                         var petAvailCount = ele.quantity - _this.request[i].quantity;
-                        checkAvail.changePetCount(ele.petType, petAvailCount);
+                        petObj.changePetCount(ele.petType, petAvailCount);
                     }
                     else {
-                        console.log("Request of " + ele.petType + " of quantity " + _this.request[i].quantity + "\n                         is not fulfilled because " + ele.quantity + " " + ele.petType + " are left in the shop");
+                        console.log("Request for " + _this.request[i].quantity + " " + ele.petType + " is not fulfilled because " + ele.quantity + " " + ele.petType + " are left in the shop");
                     }
                 }
             });
@@ -67,18 +66,22 @@ petAvailable.insertPet({
 });
 console.log(petAvailable.petsDetail());
 var requestPet = new PetRequest();
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 5
 });
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 3
 });
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 1
 });
-requestPet.getRequest();
-requestPet.requestStatus();
+requestPet.createPetRequest({
+    petType: 'Dogs',
+    quantity: 25
+});
+console.log(requestPet.getPetRequest());
+requestPet.petRequestStatus(petAvailable);
 console.log(petAvailable.petsDetail());

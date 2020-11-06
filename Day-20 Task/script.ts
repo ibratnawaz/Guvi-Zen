@@ -34,32 +34,30 @@ class PetRequest {
         this.request = [];
     }
 
-    createRequest(petInfo: PetInfo) {
+    createPetRequest(petInfo: PetInfo) {
         this.request.push(petInfo);
     }
 
-    getRequest(){
+    getPetRequest() {
         return this.request;
     }
 
-    requestStatus() {
+    petRequestStatus(petObj) {
         let checkAvail = new PetAvailable();
-        let petObj = checkAvail.petsDetail();
         let len = 5;
         if (this.request.length < len) {
             len = this.request.length;
         }
+        let petsData = petObj.petsDetail();
         for (let i = 0; i < len; i++) {
-            petObj.forEach(ele => {
-                console.log(ele.petType.toLowerCase(),this.request[i].petType.toLowerCase());
+            petsData.forEach(ele => {
                 if (ele.petType.toLowerCase() == this.request[i].petType.toLowerCase()) {
                     if (ele.quantity > this.request[i].quantity) {
-                        console.log(`Request of ${ele.petType} of quantity ${this.request[i].quantity} is fulfilled`);
+                        console.log(`Request for ${this.request[i].quantity} ${ele.petType} is fulfilled`);
                         let petAvailCount = ele.quantity - this.request[i].quantity;
-                        checkAvail.changePetCount(ele.petType, petAvailCount);
+                        petObj.changePetCount(ele.petType, petAvailCount);
                     } else {
-                        console.log(`Request of ${ele.petType} of quantity ${this.request[i].quantity}
-                         is not fulfilled because ${ele.quantity} ${ele.petType} are left in the shop`);
+                        console.log(`Request for ${this.request[i].quantity} ${ele.petType} is not fulfilled because ${ele.quantity} ${ele.petType} are left in the shop`);
                     }
                 }
             });
@@ -79,19 +77,23 @@ petAvailable.insertPet({
 console.log(petAvailable.petsDetail());
 
 let requestPet = new PetRequest();
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 5
 });
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 3
 });
-requestPet.createRequest({
+requestPet.createPetRequest({
     petType: 'Cats',
     quantity: 1
 });
-requestPet.getRequest();
-requestPet.requestStatus();
+requestPet.createPetRequest({
+    petType: 'Dogs',
+    quantity: 25
+});
+console.log(requestPet.getPetRequest());
+requestPet.petRequestStatus(petAvailable);
 
 console.log(petAvailable.petsDetail());
