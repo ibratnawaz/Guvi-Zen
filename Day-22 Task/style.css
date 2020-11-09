@@ -1,0 +1,31 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #2c2e32, #223137, #173433, #1a3527, #2b3416);
+}
+
+img {
+    width: 200px;
+    height: 64px !important;
+    margin: 32px;
+}
+
+img:hover {
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+    transform: scale(1.05);
+}
+
+.my-video {
+    width: 500px;
+    height: 300px;
+    background-color: black;
+    display: none;
+}
+
+#remote {
+    display: none;
+}
+
+#remote button {
+    margin: 16px;
+}
