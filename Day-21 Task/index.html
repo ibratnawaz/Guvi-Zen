@@ -43,65 +43,7 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>1001</td>
-                        <td>3000</td>
-                        <td>
-                            <button class="btn btn-success my-btn">+</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger my-btn">-</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info my-btn">view</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-secondary my-btn" data-toggle="modal"
-                                data-target="#customerEditModal">edit</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>1002</td>
-                        <td>5000</td>
-                        <td>
-                            <button class="btn btn-success my-btn">+</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger my-btn">-</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info my-btn">view</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-secondary my-btn" data-toggle="modal"
-                                data-target="#customerEditModal">edit</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>1003</td>
-                        <td>1000</td>
-                        <td>
-                            <button class="btn btn-success my-btn">+</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger my-btn">-</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info my-btn">view</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-secondary my-btn" data-toggle="modal"
-                                data-target="#customerEditModal">edit</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="table-body"></tbody>
             </table>
         </div>
     </div>
@@ -117,9 +59,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <small class="form-text text-muted">Field mark with * are required.</small><br>
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Name <sup>*</sup></label>
                         <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                        <small id="required" class="form-text text-danger"></small>
                     </div>
                     <div class="form-group">
                         <label for="balance">Balance</label>
@@ -136,7 +80,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-primary" id="submit" onclick="createCustomer()">Add</button>
                 </div>
             </div>
         </div>
