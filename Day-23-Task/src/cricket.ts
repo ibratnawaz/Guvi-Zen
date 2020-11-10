@@ -81,6 +81,13 @@ export class Cricket {
             tr.appendChild(td2);
             table.appendChild(tr);
         }
+
+        let totalScore = this.getTotalScores();
+        if (this.teamId.includes('1')) {
+            ( < HTMLElement > document.getElementById('score-1')).innerHTML = `${totalScore}`;
+        } else {
+            ( < HTMLElement > document.getElementById('score-2')).innerHTML = `${totalScore}`;
+        }
     }
 
     getMaxScore() {
@@ -106,7 +113,7 @@ export class Cricket {
     }
 
     getManOfMatch(player: any) {
-        
+
         ( < HTMLElement > document.getElementById('motm')).innerHTML = `
             PLAYER-${player['player']+1}<br><br>SCORE: ${player['maxScore']}  
         `;
