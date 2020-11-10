@@ -106,8 +106,7 @@ export class Cricket {
     }
 
     getManOfMatch(player: any) {
-        // let max = Math.max(team1, team2);
-        console.log(player);
+        
         ( < HTMLElement > document.getElementById('motm')).innerHTML = `
             PLAYER-${player['player']+1}<br><br>SCORE: ${player['maxScore']}  
         `;
