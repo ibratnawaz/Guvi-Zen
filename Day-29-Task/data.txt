@@ -1,0 +1,24 @@
+## New Hall Details
+{
+    "name":"Paradise Hall",
+    "area_in_sqft":1200,
+    "no_of_seats":800,
+    "price_per_hour":6000
+}
+
+
+## New Customer Details
+{
+    "name":"Nawaz",
+    "email":"nawaz@gmail.com",
+    "phone":7845967841
+}
+
+
+## New Booking Details
+{
+    "hall_id":1,
+    "customer_id":1,
+    "startDateAndTime":"12-12-2020 06:12:45",
+    "endDateAndTime":"20-12-2020 06:12:45"
+}
