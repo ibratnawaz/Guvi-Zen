@@ -1,3 +1,27 @@
+### Question
+Design a DB for Hall Booking Application
+
+Hall Collection
+    - Name
+    - sqFt
+    - Number of seats
+    - price-per-hour
+
+Customers
+    - name
+    - email
+    - phoneNumber
+
+Orders
+    - hallId
+    - customerId
+    - startDateAndTime
+    - endDateAndTime
+    - Total amount
+
+- Show total amount of orders done by customerA
+- Show total amount of value ordered by Hall 1
+
 ## New Hall Details
 {
     "name":"Paradise Hall",

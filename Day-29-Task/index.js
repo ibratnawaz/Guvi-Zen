@@ -1,28 +1,3 @@
-/*
-    Design a DB for Hall Booking Application
-
-    Hall Collection
-        - Name
-        - sqFt
-        - Number of seats
-        - price-per-hour
-
-    Customers
-        - name
-        - email
-        - phoneNumber
-
-    Orders
-        - hallId
-        - customerId
-        - startDateAndTime
-        - endDateAndTime
-        - Total amount
-
-    - Show total amount of orders done by customerA
-    - Show total amount of value ordered by Hall 1
- */
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -171,7 +146,6 @@ app.delete("/api/customer/:id", (req, res) => {
 
 
 // Place new booking
-app.get("/api/bookings", (req, res) => {res.send(bookings);});
 app.post("/api/booking", (req, res) => {
     let dateTime = req.body.startDateAndTime.split(' ');
     let curDate = dateTime[0].split("/");
@@ -180,7 +154,7 @@ app.post("/api/booking", (req, res) => {
     for (booking of bookings) {
         let date1 = booking.startDateAndTime.split(" ");
         date1 = date1[0].split("/");
-        let date2 = booking.startDateAndTime.split(" ");
+        let date2 = booking.endDateAndTime.split(" ");
         date2 = date2[0].split("/");
         let from = new Date(date1[2], parseInt(date1[1]) - 1, date1[0]);
         let to = new Date(date2[2], parseInt(date2[1]) - 1, date2[0]);
@@ -222,7 +196,7 @@ app.get("/api/booking/user/:id", (req, res) => {
                     hall_name: hall.name,
                     startDateAndTime: obj.startDateAndTime,
                     endDateAndTime: obj.endDateAndTime,
-                    amount: 35000
+                    amount: +obj.totalHours * hall.price_per_hour
                 });
             }
         });
@@ -258,7 +232,7 @@ app.get("/api/booking/hall/:id", (req, res) => {
                     customer: customer,
                     startDateAndTime: obj.startDateAndTime,
                     endDateAndTime: obj.endDateAndTime,
-                    amount: 35000
+                    amount: +obj.totalHours * hall.price_per_hour
                 });
             }
         });
