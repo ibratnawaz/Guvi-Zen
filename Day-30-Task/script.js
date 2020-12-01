@@ -5,10 +5,10 @@ async function getUser(role) {
         let api;
         let table;
         if (role == 1) {
-            api = await fetch('http://localhost:3000/students');
+            api = await fetch('https://nodejs-zen.herokuapp.com/students');
             table = document.getElementById('student-table');
         } else if (role == 2) {
-            api = await fetch('http://localhost:3000/mentors');
+            api = await fetch('https://nodejs-zen.herokuapp.com/mentors');
             table = document.getElementById('mentor-table');
         }
         let res = await api.json();
@@ -75,7 +75,7 @@ async function createUser() {
                 phone: document.getElementById('phone').value
             }
             if (role == 1) {
-                let api = await fetch('http://localhost:3000/student/create', {
+                let api = await fetch('https://nodejs-zen.herokuapp.com/student/create', {
                     method: "POST",
                     body: JSON.stringify(data),
                     headers: {
@@ -86,7 +86,7 @@ async function createUser() {
                 alertMessage(res.success, 'success');
                 getUser(1);
             } else if (role == 2) {
-                let api = await fetch('http://localhost:3000/mentor/create', {
+                let api = await fetch('https://nodejs-zen.herokuapp.com/mentor/create', {
                     method: "POST",
                     body: JSON.stringify(data),
                     headers: {
@@ -97,6 +97,7 @@ async function createUser() {
                 alertMessage(res.success, 'success');
                 getUser(2);
             }
+            document.getElementById('my-form').reset();
         }
     } catch (error) {
         console.log(error)
@@ -133,7 +134,7 @@ async function updateUser() {
             let userId = document.getElementById('userId').value;
             let role = document.getElementById('role').value;
             if (role == 1) {
-                let api = await fetch(`http://localhost:3000/student/edit/${userId}`, {
+                let api = await fetch(`https://nodejs-zen.herokuapp.com/student/edit/${userId}`, {
                     method: "PUT",
                     body: JSON.stringify(data),
                     headers: {
@@ -144,7 +145,7 @@ async function updateUser() {
                 alertMessage(res.success, 'warning');
                 getUser(1);
             } else if (role == 2) {
-                let api = await fetch(`http://localhost:3000/mentor/edit/${userId}`, {
+                let api = await fetch(`https://nodejs-zen.herokuapp.com/mentor/edit/${userId}`, {
                     method: "PUT",
                     body: JSON.stringify(data),
                     headers: {
@@ -167,14 +168,14 @@ async function deleteUser(role, userId) {
         if (check) {
             let api;
             if (role == 1) {
-                api = await fetch(`http://localhost:3000/student/${userId}`, {
+                api = await fetch(`https://nodejs-zen.herokuapp.com/student/${userId}`, {
                     method: "DELETE",
                 });
                 let res = await api.json();
                 alertMessage(res.success, 'danger');
                 getUser(1);
             } else if (role == 2) {
-                api = await fetch(`http://localhost:3000/mentor/${userId}`, {
+                api = await fetch(`https://nodejs-zen.herokuapp.com/mentor/${userId}`, {
                     method: "DELETE",
                 });
                 let res = await api.json();
