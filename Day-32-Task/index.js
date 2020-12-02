@@ -5,7 +5,7 @@ async function checkAccount() {
     data = {
         email
     };
-    let api = await fetch('http://localhost:3000/password/forgot', {
+    let api = await fetch('https://nodejs-auth-user.herokuapp.com/password/forgot', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

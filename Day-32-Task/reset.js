@@ -32,7 +32,7 @@ async function resetPassword(password) {
         token: _token[1],
         password
     };
-    let api = await fetch('http://localhost:3000/password/reset', {
+    let api = await fetch('https://nodejs-auth-user.herokuapp.com/password/reset', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
