@@ -47,6 +47,7 @@
                 </form>
             </div>
             <div class="col-md-8">
+                <div class="alert alert-success mt-2" style="display: none;" id="success-msg" role="alert"></div>
                 <div class="alert alert-danger mt-2" style="display: none;" id="danger" role="alert"></div>
                 <div class="alert alert-warning mt-2" style="display: none;" id="warning" role="alert"></div>
                 <div class="table-responsive container mt-2 border">
@@ -92,7 +93,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Edit Modal -->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -130,10 +131,64 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <!-- Show/Assign New Student List Modal -->
+    <div class="modal fade" id="modal-assign" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assignModalLabel">Assigning New Students </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="assignStudent();return false;">
+                        <input type="hidden" id="mentorId" value="">
+                        <div class="form-group">
+                            <label for="students">Assign New Students</label><br>
+                            <small class="text-muted">Note : use ctrl + left mouse click to select multiple
+                                options</small>
+                            <select id="students" multiple="multiple" class="form-control">
+                                <option>Loading...</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="btn-assign" onclick="assignStudent()" class="btn btn-primary">Assign</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show Assigned Students/Mentor List Modal -->
+    <div class="modal fade" id="mentor-students" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assignedModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="students-list">
+                        <li class="list-group-item">Loading data...</li>
+                    </ul>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
