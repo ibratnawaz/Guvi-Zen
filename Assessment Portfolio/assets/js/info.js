@@ -2,7 +2,7 @@ getDetails();
 let _id;
 
 async function getDetails() {
-    let response = await fetch('http://localhost:3000/portfolio');
+    let response = await fetch('https://my-portfolio-node.herokuapp.com/portfolio');
     let result = await response.json();
     console.log(result.data)
     let obj = result.data[0];
@@ -118,7 +118,7 @@ async function editDetails() {
         skills
     };
 
-    let response = await fetch(`http://localhost:3000/portfolio/edit/${_id}`, {
+    let response = await fetch(`https://my-portfolio-node.herokuapp.com/portfolio/edit/${_id}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
