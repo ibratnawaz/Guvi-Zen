@@ -1,12 +1,13 @@
 async function register() {
     document.getElementById('btn-register').disabled = true;
     let data = {
-        first_name: document.getElementById('first_name').value,
-        last_name: document.getElementById('last_name').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        confirm_password: document.getElementById('confirm_password').value
+        first_name: document.getElementById('first_name').value.trim(),
+        last_name: document.getElementById('last_name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        password: document.getElementById('password').value.trim(),
+        confirm_password: document.getElementById('confirm_password').value.trim()
     }
+    console.log(data);
     let apiRegister = await fetch('http://localhost:3000/register', {
         method: 'POST',
         body: JSON.stringify(data),
