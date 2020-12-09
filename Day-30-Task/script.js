@@ -11,14 +11,14 @@ async function getUser(role) {
         let viewName;
         let viewFunc;
         if (role == 1) {
-            api = await fetch('https://nodejs-zen.herokuapp.com/students');
+            api = await fetch('http://localhost:3000/students');
             table = document.getElementById('student-table');
             ancName = 'Remove Mentor';
             funName = 'removeAssignedMentor';
             viewFunc = 'viewMentor';
             viewName = 'View Mentor';
         } else if (role == 2) {
-            api = await fetch('https://nodejs-zen.herokuapp.com/mentors');
+            api = await fetch('http://localhost:3000/mentors');
             table = document.getElementById('mentor-table');
             target = '#modal-assign';
             ancName = 'Assign New';
@@ -93,7 +93,7 @@ async function createUser() {
                 phone: document.getElementById('phone').value
             }
             if (role == 1) {
-                let api = await fetch('https://nodejs-zen.herokuapp.com/student/create', {
+                let api = await fetch('http://localhost:3000/student/create', {
                     method: "POST",
                     body: JSON.stringify(data),
                     headers: {
@@ -104,7 +104,7 @@ async function createUser() {
                 alertMessage(res.success, 'success');
                 getUser(1);
             } else if (role == 2) {
-                let api = await fetch('https://nodejs-zen.herokuapp.com/mentor/create', {
+                let api = await fetch('http://localhost:3000/mentor/create', {
                     method: "POST",
                     body: JSON.stringify(data),
                     headers: {
@@ -152,7 +152,7 @@ async function updateUser() {
             let userId = document.getElementById('userId').value;
             let role = document.getElementById('role').value;
             if (role == 1) {
-                let api = await fetch(`https://nodejs-zen.herokuapp.com/student/edit/${userId}`, {
+                let api = await fetch(`http://localhost:3000/student/edit/${userId}`, {
                     method: "PUT",
                     body: JSON.stringify(data),
                     headers: {
@@ -163,7 +163,7 @@ async function updateUser() {
                 alertMessage(res.success, 'warning');
                 getUser(1);
             } else if (role == 2) {
-                let api = await fetch(`https://nodejs-zen.herokuapp.com/mentor/edit/${userId}`, {
+                let api = await fetch(`http://localhost:3000/mentor/edit/${userId}`, {
                     method: "PUT",
                     body: JSON.stringify(data),
                     headers: {
@@ -186,14 +186,14 @@ async function deleteUser(role, userId) {
         if (check) {
             let api;
             if (role == 1) {
-                api = await fetch(`https://nodejs-zen.herokuapp.com/student/${userId}`, {
+                api = await fetch(`http://localhost:3000/student/${userId}`, {
                     method: "DELETE",
                 });
                 let res = await api.json();
                 alertMessage(res.success, 'danger');
                 getUser(1);
             } else if (role == 2) {
-                api = await fetch(`https://nodejs-zen.herokuapp.com/mentor/${userId}`, {
+                api = await fetch(`http://localhost:3000/mentor/${userId}`, {
                     method: "DELETE",
                 });
                 let res = await api.json();
@@ -222,7 +222,7 @@ async function assignStudent() {
             mentorId,
             students,
         }
-        let api = await fetch('https://nodejs-zen.herokuapp.com/assign/students', {
+        let api = await fetch('http://localhost:3000/assign/students', {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -240,7 +240,7 @@ async function assignStudent() {
 
 async function showStudents(mentorID) {
     try {
-        let api = await fetch('https://nodejs-zen.herokuapp.com/assign/view/students');
+        let api = await fetch('http://localhost:3000/assign/view/students');
         let res = await api.json();
         let select = document.getElementById('students');
         if (res.items) {
@@ -263,8 +263,8 @@ async function showStudents(mentorID) {
 async function getAssignedStudent(mentorId) {
     try {
         $('#mentor-students').modal('show');
-        document.getElementById('assignedModalLabel').innerHTML='Assigned Students';
-        let api = await fetch(`https://nodejs-zen.herokuapp.com/assign/mentor/students/${mentorId}`);
+        document.getElementById('assignedModalLabel').innerHTML = 'Assigned Students';
+        let api = await fetch(`http://localhost:3000/assign/mentor/students/${mentorId}`);
         let res = await api.json();
         let list = document.getElementById('students-list');
         if (res.status == 'success') {
@@ -289,7 +289,7 @@ async function removeAssignedMentor(mentorId) {
     try {
         let decision = confirm('You sure you want to remove your mentor');
         if (decision) {
-            let api = await fetch(`https://nodejs-zen.herokuapp.com/assign/mentor/remove/${mentorId}`, {
+            let api = await fetch(`http://localhost:3000/assign/mentor/remove/${mentorId}`, {
                 method: "DELETE",
             });
             let res = await api.json();
@@ -300,22 +300,22 @@ async function removeAssignedMentor(mentorId) {
     }
 }
 
-async function viewMentor(id){
+async function viewMentor(id) {
     try {
         $('#mentor-students').modal('show');
-        document.getElementById('assignedModalLabel').innerHTML='Assigned Mentor';
-        let api = await fetch(`https://nodejs-zen.herokuapp.com/assign/mentor/${id}`);
+        document.getElementById('assignedModalLabel').innerHTML = 'Assigned Mentor';
+        let api = await fetch(`http://localhost:3000/assign/mentor/${id}`);
         let res = await api.json();
         let list = document.getElementById('students-list');
         list.innerHTML = '';
         let li = createMyTag('li', 'list-group-item');
-        if (res.status=='success') {
+        if (res.status == 'success') {
             li.innerHTML = `${res.data[0].results[0].name}`;
         } else {
             li.innerHTML = `${res.message}`;
         }
         list.appendChild(li);
     } catch (error) {
-        
+
     }
 }
