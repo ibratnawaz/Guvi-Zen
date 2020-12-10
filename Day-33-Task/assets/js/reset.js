@@ -5,7 +5,7 @@ async function resetPassword() {
             password: document.getElementById('password').value,
             confirm_password: document.getElementById('confirm_password').value
         }
-        let apiReset = await fetch(`http://localhost:3000/password/reset/${uid}`, {
+        let apiReset = await fetch(`https://url-shortener-backend-node.herokuapp.com/password/reset/${uid}`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

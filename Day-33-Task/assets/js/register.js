@@ -8,7 +8,7 @@ async function register() {
             password: document.getElementById('password').value.trim(),
             confirm_password: document.getElementById('confirm_password').value.trim()
         }
-        let apiRegister = await fetch('http://localhost:3000/register', {
+        let apiRegister = await fetch('https://url-shortener-backend-node.herokuapp.com/register', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

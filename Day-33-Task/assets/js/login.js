@@ -5,7 +5,7 @@ async function login() {
             email: document.getElementById('email').value.trim(),
             password: document.getElementById('password').value.trim()
         }
-        let apiLogin = await fetch('http://localhost:3000/login', {
+        let apiLogin = await fetch('https://url-shortener-backend-node.herokuapp.com/login', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

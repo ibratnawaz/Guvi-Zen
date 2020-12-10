@@ -3,7 +3,7 @@ async function authUser() {
     let token = localStorage.getItem('_token');
     localStorage.setItem('fromPage', window.location.pathname);
     try {
-        let apiAuth = await fetch(`http://localhost:3000/verify/${uid}`, {
+        let apiAuth = await fetch(`https://url-shortener-backend-node.herokuapp.com/verify/${uid}`, {
             method: 'GET',
             headers: {
                 "Authorization": token

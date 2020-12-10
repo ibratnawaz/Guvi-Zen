@@ -13,7 +13,7 @@ async function createShortUrl() {
     let data = {
         long_url: document.getElementById('url').value
     }
-    let apiShortUrl = await fetch('http://localhost:3000/short-url', {
+    let apiShortUrl = await fetch('https://url-shortener-backend-node.herokuapp.com/short-url', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -42,7 +42,7 @@ function showAlert(message, status) {
 
 async function getData() {
     try {
-        let api = fetch('http://localhost:3000/users/url-data', {
+        let api = fetch('https://url-shortener-backend-node.herokuapp.com/users/url-data', {
             method: 'GET',
             headers: {
                 "Authorization": localStorage.getItem('_token')
