@@ -17,7 +17,7 @@ async function forgotPassword() {
         } else {
             showAlert(response.message, 'danger');
         }
-        document.getElementById('btn-forgot').disabled = true;
+        document.getElementById('btn-forgot').disabled = false;
     } catch (error) {
         console.log(error);
     }
@@ -29,7 +29,7 @@ function showAlert(message, status, next = '') {
     alertBox.style.display = 'block';
     alertBox.setAttribute('class', `alert alert-${status}`);
     alertBox.innerHTML = message;
-    if (next) {
-        redirectToLogin();
-    }
+    setTimeout(() => {
+        alertBox.style.display = 'none';
+    }, 3500);
 }
