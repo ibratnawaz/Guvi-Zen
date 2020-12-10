@@ -16,5 +16,17 @@ async function createShortUrl() {
 }
 
 async function getData() {
-
+    try {
+        let api = fetch('http://localhost:3000/users/url-data', {
+            method: 'GET',
+            headers: {
+                "Authorization": localStorage.getItem('_token')
+            }
+        });
+        let response = await (await api).json();
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
 }
+getData()
