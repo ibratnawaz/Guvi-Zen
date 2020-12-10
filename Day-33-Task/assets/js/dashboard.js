@@ -9,24 +9,27 @@ function logout() {
 }
 
 async function createShortUrl() {
-    document.getElementById('btn-url').disabled = true;
-    let data = {
-        long_url: document.getElementById('url').value
-    }
-    let apiShortUrl = await fetch('https://url-shortener-backend-node.herokuapp.com/short-url', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            "Authorization": localStorage.getItem('_token'),
-            "Content-type": "application/json"
+    try {
+        let data = {
+            long_url: document.getElementById('url').value
         }
-    });
+        let apiShortUrl = await fetch('https://url-shortener-backend-node.herokuapp.com/short-url', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "Authorization": localStorage.getItem('_token'),
+                "Content-type": "application/json"
+            }
+        });
 
-    let response = await apiShortUrl.json();
-    console.log(response);
-    showAlert(response.message, 'success');
-    document.getElementById('btn-url').disabled = false;
-    getData();
+        let response = await apiShortUrl.json();
+        showAlert(response.message, 'success');
+        document.getElementById('btn-url').disabled = false;
+        getData();
+    } catch (error) {
+        console.log(error);
+    }
+    document.getElementById('btn-url').disabled = true;
 }
 
 function showAlert(message, status) {

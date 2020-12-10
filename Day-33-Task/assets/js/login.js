@@ -13,7 +13,6 @@ async function login() {
             }
         });
         let response = await apiLogin.json();
-        console.log(response)
         if (response.status == "failed") {
             showAlert(response.message, 'danger');
         } else {

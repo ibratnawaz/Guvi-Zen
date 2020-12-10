@@ -18,7 +18,6 @@ async function resetPassword() {
         } else {
             showAlert(response.message, 'danger');
         }
-        console.log(response);
     } catch (error) {
         console.log(error);
     }

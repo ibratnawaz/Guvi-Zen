@@ -1,9 +1,9 @@
 async function forgotPassword() {
     try {
+        document.getElementById('btn-forgot').disabled = true;
         let data = {
             email: document.getElementById('email').value
         }
-        console.log(data);
         let apiReset = await fetch(`https://url-shortener-backend-node.herokuapp.com/password/forgot`, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -17,7 +17,7 @@ async function forgotPassword() {
         } else {
             showAlert(response.message, 'danger');
         }
-        console.log(response);
+        document.getElementById('btn-forgot').disabled = true;
     } catch (error) {
         console.log(error);
     }
