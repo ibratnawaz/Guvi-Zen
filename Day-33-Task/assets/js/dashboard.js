@@ -57,8 +57,8 @@ async function getData() {
                 tr.innerHTML = `
                     <th scope="row">${index+1}</th>
                     <td title="${obj.long_url}">${obj.long_url.substring(0,49)}...</td>
-                    <td>http://localhost:3000/${obj.short_url_code}</td>
-                    <td><a href="http://localhost:3000/${obj.short_url_code}" target="_blank"><i class="fa fa-link"></i></a></td>
+                    <td>https://url-shortener-backend-node.herokuapp.com/${obj.short_url_code}</td>
+                    <td><a href="https://url-shortener-backend-node.herokuapp.com/${obj.short_url_code}" target="_blank"><i class="fa fa-link"></i></a></td>
                 `;
                 table.appendChild(tr);
             });
